@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.detail.DetailActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cv_image"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_marginTop="-32dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/iv_detail"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/img_sample"
+                        android:scaleType="centerCrop"
+                        tools:ignore="ContentDescription" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cv_back"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="48dp"
+                        app:cardBackgroundColor="#4D37474F"
+                        app:cardCornerRadius="32dp"
+                        app:cardElevation="0dp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="4dp"
+                            android:background="@drawable/ic_back"
+                            app:tint="@color/white"
+                            tools:ignore="ContentDescription" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                </FrameLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <ImageView
+                android:id="@+id/iv_favorite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cv_image"
+                tools:background="@drawable/ic_favorite"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/tv_detail_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="16dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/limed_spruce"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toStartOf="@id/iv_favorite"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cv_image"
+                tools:text="Taman Langit" />
+
+            <TextView
+                android:id="@+id/tv_detail_location"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="4dp"
+                android:drawablePadding="8dp"
+                android:gravity="center_vertical"
+                android:textColor="@color/limed_spruce"
+                app:drawableStartCompat="@drawable/ic_map_pin_detail"
+                app:drawableTint="@color/primary"
+                app:layout_constraintEnd_toEndOf="@id/tv_detail_name"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_detail_name"
+                tools:text="Desa Nyalembeng, Kecamatan Pulosari" />
+
+            <HorizontalScrollView
+                android:id="@+id/hsv_detail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:clipToPadding="false"
+                android:padding="8dp"
+                android:paddingHorizontal="4dp"
+                android:scrollbars="none"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_detail_location">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <include
+                        android:id="@+id/card_rating"
+                        layout="@layout/item_card_detail" />
+
+                    <include
+                        android:id="@+id/card_distance"
+                        layout="@layout/item_card_detail" />
+
+                    <include
+                        android:id="@+id/card_total_restaurant"
+                        layout="@layout/item_card_detail" />
+
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/tv_detail_desc"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="80dp"
+                android:textColor="@color/limed_spruce"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/hsv_detail"
+                tools:text="Taman Langit Pulosari berlokasi di Desa Nyalembeng, Kecamatan Pulosari, atau sekitar 35 kilometer dari pusat Kota Pemalang. Spot wisata ini punya daya tarik berupa gardu pandang dengan lantai kaca dengan pemandangan Gunung Slamet. Kamu juga bisa berfoto di berbagai spot yang kece." />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:id="@+id/ll_show_location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="?attr/colorOnPrimary">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btn_show_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            app:cardBackgroundColor="@color/primary">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:padding="16dp"
+                android:text="@string/tunjukan_lokasi"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

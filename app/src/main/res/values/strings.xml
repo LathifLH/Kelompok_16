@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="title_home">Home</string>
+    <string name="title_food">Food</string>
+    <string name="cant_get_permission">Tidak mendapatkan Permission</string>
+    <string name="nilai">Nilai</string>
+    <string name="jarak">Jarak</string>
+    <string name="tempat_makan">Tempat Makan</string>
+    <string name="tunjukan_lokasi">TUNJUKAN LOKASI</string>
+    <string name="pemalang_jawa_tengah">Pemalang, Jawa Tengah</string>
+    <string name="mau_makan_apa_hari_ini">Mau Makan Apa Hari ini ?</string>
+    <string name="mau_kemana_hari_ini">Mau Kemana Hari ini ?</string>
+    <string name="google_maps_is_not_available">Tidak ada aplikasi Google map</string>
+</resources>
